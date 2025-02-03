@@ -18,7 +18,7 @@ pub fn check_load_status(asset_server: Res<AssetServer>, mut primitive: ResMut<P
         let path = handle.path().unwrap();
         match asset_server.load_state(handle) {
             bevy::asset::LoadState::NotLoaded => println!("not loaded {:#}", path),
-            // perpetually stuck laoding here, but no error from the asset loader about being an invalid asset?
+            // perpetually stuck loading here, but no error from the asset loader about being an invalid asset?
             bevy::asset::LoadState::Loading => {
                 println!("loading {:#?}", path)
             }
